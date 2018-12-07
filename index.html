@@ -1,44 +1,52 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>SpaceX Launch Tracking</title>
-<!--<link href="/SpaceX/css/main.css" rel="stylesheet" type="text/css">-->
-<link href="css/main.css" rel="stylesheet" type="text/css">
-<link href="css/home.css" rel="stylesheet" type="text/css">
+    
+    <meta charset="utf-8">
+    <title>SpaceX Stuff</title>
+    <!--<link href="/SpaceX/css/main.css" rel="stylesheet" type="text/css">-->
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <!--<link href="css/home.css" rel="stylesheet" type="text/css">-->
+    
+
 </head>
 
 <body>
     
-    <div class="nav-bar">
+    <header>
+        <h1>SpaceX Stuff</h1>
+        <h2>If they did a thing, it's in here somewhere.</h2>
+    </header>
+ 
+    <div class="nav-bar" id="nav">
         <ul>
-            <li>
-                <a href="./index.html">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="./Pages/latest.html">
-                    Latest
-                </a>
-            </li>
-            <li>
-                <a href="./Pages/search.html">
-                    Search
-                </a>
-            </li>
-            <li>
-                <a href="./Pages/list.html">
-                    Launch List
-                </a>
-            </li>
+              <li>
+                  <a href="./index.html">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="./Pages/search.html">
+                      Search
+                  </a>
+              </li>
+              <li>
+                  <a href="./Pages/list.html">
+                      All Launches
+                  </a>
+              </li>
         </ul>
     </div>
     
+    <script>
+        window.onscroll = function() {stickyToggle(header, sticky)};
+
+        var header = document.getElementById("nav");
+        var sticky = header.offsetTop;
+    </script>
+
     <div class="content">
-        <header>
-          <h2>Blargh</h2>
-        </header>
+        
         <p>
             Blargh
         </p>
@@ -49,6 +57,8 @@
             Blargh
         </footer>
     </div>
+
+    <script type="text/javascript" src="shared/shared.js"></script>
     
 </body>
 </html>
