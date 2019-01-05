@@ -13,10 +13,12 @@
 
 <body>
     
+    <div class="header">
     <header>
         <h1>SpaceX Stuff</h1>
         <h2>If they did a thing, it's in here somewhere.</h2>
     </header>
+    </div>
  
     <div class="nav-bar" id="nav">
         <ul>
@@ -44,14 +46,34 @@
         var header = document.getElementById("nav");
         var sticky = header.offsetTop;
     </script>
-
+    
     <div class="content">
         
         <p>
             Blargh
         </p>
+        
     </div>
+
+    <!--<script>
+        
+        loadJSON();
+        
+        function loadJSON() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var obj = JSON.parse(this.responseText);
+                    var myArr = JSON.stringify(obj, undefined, 2);
+                    document.getElementById("test").innerHTML = myArr;
+                }
+            };
+            xhttp.open("GET", "https://api.spacexdata.com/v3/launches/latest", true);
+            xhttp.send();
+        }
     
+    </script>-->
+        
     <!--<div id="scroll test">
         <h3>On Scroll Sticky Header</h3>
         <p>The header will stick to the top when you reach its scroll position.</p>
@@ -73,6 +95,7 @@
     </div>
 
     <script type="text/javascript" src="./Shared/shared.js"></script>
+    <script type="text/javascript" src="./js/index.js"></script>
     
 </body>
 </html>
