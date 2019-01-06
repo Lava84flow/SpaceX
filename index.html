@@ -53,26 +53,37 @@
             Blargh
         </p>
         
+        <div class="countdown" id="countdown1">
+            <span class="timeel days">00</span>
+            <span class="timeel timeRefDays">days</span>
+            <span class="timeel hours">00</span>
+            <span class="timeel timeRefHours">hours</span>
+            <span class="timeel minutes">00</span>
+            <span class="timeel timeRefMinutes">minutes</span>
+            <span class="timeel seconds">00</span>
+            <span class="timeel timeRefSeconds">seconds</span>
+        </div>
+        
+        <div class="countup" id="countup1">
+            <span class="timeel days">00</span>
+            <span class="timeel timeRefDays">days</span>
+            <span class="timeel hours">00</span>
+            <span class="timeel timeRefHours">hours</span>
+            <span class="timeel minutes">00</span>
+            <span class="timeel timeRefMinutes">minutes</span>
+            <span class="timeel seconds">00</span>
+            <span class="timeel timeRefSeconds">seconds</span>
+        </div>
+        
+        <p id="id01">
+            Blargh Honk
+        </p>
+        
     </div>
 
-    <!--<script>
+    <script>
         
-        loadJSON();
-        
-        function loadJSON() {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    var obj = JSON.parse(this.responseText);
-                    var myArr = JSON.stringify(obj, undefined, 2);
-                    document.getElementById("test").innerHTML = myArr;
-                }
-            };
-            xhttp.open("GET", "https://api.spacexdata.com/v3/launches/latest", true);
-            xhttp.send();
-        }
-    
-    </script>-->
+    </script>
         
     <!--<div id="scroll test">
         <h3>On Scroll Sticky Header</h3>
