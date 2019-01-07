@@ -8,31 +8,22 @@ function stickyToggle(header, sticky) {
     }
 }
 
-function apiPull(type, pass) {
+function apiPull(type, callback) {
     
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest;
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            pass(this);
-        }
-    };
-    xhttp.open("GET", "https://api.spacexdata.com/v3/" + type, true);
+    xhttp.open("GET", "https://api.spacexdata.com/v3/" + type);
+    xhttp.onload = callback;
     xhttp.send();
+
 }
 
-function apiPullID(type, pass, id) {
+function apiPullID(type, callback, id) {
     
-    Blargh
-    
-    var xhttp = new XMLHttpRequest();
+    var xhttp = new XMLHttpRequest;
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            pass(this);
-        }
-    };
-    xhttp.open("GET", "https://api.spacexdata.com/v3/" + type, true);
+    xhttp.open("GET", "https://api.spacexdata.com/v3/" + type + "/" + id);
+    xhttp.onload = callback;
     xhttp.send();
-}
 
+}
