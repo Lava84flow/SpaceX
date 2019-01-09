@@ -8,16 +8,23 @@ body{
     background-position: top;
     background-attachment: fixed;
     color: white;
+    height: 100%;
 }
 
 #wrapper{
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/opacity/see-through */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
+    padding-block-start: 1.5em;
+    padding-block-end: 1.5em;
 }
 
 body div{
     margin: auto;
     width: 80%;
 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #eb6123;
 }
 
 .top-container {
@@ -55,8 +62,17 @@ body div{
     margin: auto;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #622488;
+    border-radius: 8px;
+    transition: border-radius 1s;
 }
+
+.sticky ul {
+    border-radius: 0 0 8px 8px;
+
+    
+}
+
 
 .nav-bar li {
     float: left;
@@ -78,7 +94,7 @@ body div{
 .sticky {
     position: sticky;
     top: 0;
-
+    border-radius: 0 8px 8px 0;
 }
 
 
@@ -90,40 +106,35 @@ body div{
   text-align: center;
   margin-bottom: 20px;
 }
-.countdown .timeel {
+
+.timeel {
   display: inline-block;
   padding: 10px;
-  background: #151515;
+  background: #622488;
   margin: 0;
   color: white;
-  min-width: 2.6rem;
+  min-width: 2em;
   margin-left: 13px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 8px 0 0 8px;
+    /*! justify-content: space-around; */
 }
 .countdown span[class*="timeRef"] {
-  border-radius: 0 10px 10px 0;
-  margin-left: 0;
-  background: #e8c152;
+  border-radius: 0 8px 8px 0;
+  margin-left: -.2em;
+  background: #eb6123;
   color: black;
+  font-weight: bold;
 }
 
 .countup {
   text-align: center;
   margin-bottom: 20px;
 }
-.countup .timeel {
-  display: inline-block;
-  padding: 10px;
-  background: #151515;
-  margin: 0;
-  color: white;
-  min-width: 2.6rem;
-  margin-left: 13px;
-  border-radius: 10px 0 0 10px;
-}
+
 .countup span[class*="timeRef"] {
   border-radius: 0 10px 10px 0;
-  margin-left: 0;
-  background: #e8c152;
+  margin-left: -.2em;
+  background: #eb6123;
   color: black;
+      font-weight: bold;
 }
