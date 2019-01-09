@@ -8,16 +8,16 @@ function test(){
     console.log(JSON.parse(this.response));
 }
 
-apiPull("launches/latest", assignUpTime);
+apiPull("launches/latest", parseLatest);
 
-function assignUpTime(){
+function parseLatest(){
     apiDate = JSON.parse(this.response)
     countUpFromTime(apiDate.launch_date_utc, 'countup1');
 }
 
-apiPull("launches/next", assignDownTime);
+apiPull("launches/next", parseNext);
 
-function assignDownTime(){
+function parseNext(){
     apiDate = JSON.parse(this.response)
     countDownToTime(apiDate.launch_date_utc, 'countdown1');
 }
