@@ -1,5 +1,12 @@
 // JavaScript Document
 
+window.onload(showPage());
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("wrapper").style.display = "block";
+}
+
 function stickyToggle(header, sticky) {
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");

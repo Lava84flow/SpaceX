@@ -6,9 +6,11 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onload="showPage()">
     
-    <div id="wrapper">
+    <div id="loader"></div>
+    
+    <div id="wrapper" style="display:none;">
         <div class="header">
             <header>
                 <h1>SpaceX Stuff</h1>
@@ -52,7 +54,7 @@
                 <span><h3>Next Launch</h3></span>
 
                 <p id="nextDetails">
-                    Blargh next
+                    next Blargh 
                 </p>
                 
                 <div class="countdown" id="countdown1">
@@ -71,7 +73,7 @@
                 <span><h3>Latest Launch</h3></span>
 
                 <p id="latestDetails">
-                    Blargh latest
+                    latest Blargh 
                 </p>
 
                 <div class="countup" id="countup1">
