@@ -8,18 +8,21 @@ function test(){
     console.log(JSON.parse(this.response));
 }
 
-apiPull("launches/latest", parseLatest);
-
-function parseLatest(){
-    apiDate = JSON.parse(this.response)
-    countUpFromTime(apiDate.launch_date_utc, 'countup1');
-}
-
 apiPull("launches/next", parseNext);
 
 function parseNext(){
-    apiDate = JSON.parse(this.response)
-    countDownToTime(apiDate.launch_date_utc, 'countdown1');
+    data = JSON.parse(this.response)
+    countDownToTime(data.launch_date_utc, 'countdown1');
+    document.getElementById("nextDetails").innerHTML = 'SpaceX will launch a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', lofting the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + 'Blargh';
+    
+}
+
+apiPull("launches/latest", parseLatest);
+
+function parseLatest(){
+    data = JSON.parse(this.response)
+    countUpFromTime(data.launch_date_utc, 'countup1');
+    
 }
 
 /*
