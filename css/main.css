@@ -1,34 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* Center the loader */
-#loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 body{
     background-image: url("../Shared/Images/wp2742864-dope-space-backgrounds-tumblr.jpg");
     font-family: Arial, Helvetica, sans-serif;
@@ -44,6 +16,7 @@ body{
     background-color: rgba(0, 0, 0, 0.6); /* Black w/opacity/see-through */
     padding-block-start: 1.5em;
     padding-block-end: 1.5em;
+    opacity: 0;
 }
 
 body div{
@@ -168,3 +141,81 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: bold;
 }
 
+  .lds-grid {
+  position: absolute;
+      top: 50%;
+      left: 50%;
+  width: 8em;
+  height: 8em;
+      transform: translate(-50%, -50%)
+}
+.lds-grid div {
+  position: absolute;
+  width: 1.50em;
+  height: 1.50em;
+  border-radius: 50%;
+  background: #eb6123;
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  left: 25%;
+  animation-delay: 0s;
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(2) {
+  top: 25%;
+  left: 50%;
+  animation-delay: -0.4s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(3) {
+  top: 25%;
+  left: 75%;
+  animation-delay: -0.8s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(4) {
+  top: 50%;
+  left: 25%;
+  animation-delay: -0.4s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(5) {
+  top: 50%;
+  left: 50%;
+  animation-delay: -0.8s;
+  transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(6) {
+  top: 50%;
+  left: 75%;
+  animation-delay: -1.2s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(7) {
+  top: 75%;
+  left: 25%;
+  animation-delay: -0.8s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(8) {
+  top: 75%;
+  left: 50%;
+  animation-delay: -1.2s;
+    transform: translate(-50%, -50%);
+}
+.lds-grid div:nth-child(9) {
+  top: 75%;
+  left: 75%;
+  animation-delay: -1.6s;
+  transform: translate(-50%, -50%);
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

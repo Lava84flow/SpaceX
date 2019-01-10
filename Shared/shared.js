@@ -1,10 +1,8 @@
 // JavaScript Document
 
-window.onload(showPage());
-
 function showPage() {
     document.getElementById("loader").style.display = "none";
-    document.getElementById("wrapper").style.display = "block";
+    document.getElementById("wrapper").style.opacity = "1";
 }
 
 function stickyToggle(header, sticky) {
