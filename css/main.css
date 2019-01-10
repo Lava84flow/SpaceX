@@ -57,18 +57,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-bar ul {
-    width: 80%;
+    width: 60%;
     list-style-type: none;
     margin: auto;
     padding: 0;
     overflow: hidden;
     background-color: #622488;
-    border-radius: 8px;
+    border-radius: 0.75em;
     transition: border-radius 1s;
 }
 
 .sticky ul {
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 0.75em 0.75em;
 
     
 }
@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 .sticky {
     position: sticky;
     top: 0;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 0.75em 0.75em 0;
 }
 
 
@@ -115,11 +115,11 @@ h1, h2, h3, h4, h5, h6 {
   color: white;
   min-width: 2em;
   margin-left: 13px;
-  border-radius: 8px 0 0 8px;
+  border-radius: 0.75em 0 0 0.75em;
     /*! justify-content: space-around; */
 }
 .countdown span[class*="timeRef"] {
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 0.75em 0.75em 0;
   margin-left: -.2em;
   background: #eb6123;
   color: black;
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .countup span[class*="timeRef"] {
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0.75em 0.75em 0;
   margin-left: -.2em;
   background: #eb6123;
   color: black;
