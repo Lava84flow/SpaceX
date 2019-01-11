@@ -106,7 +106,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .countdown {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: .75em;
+  margin-top: .75em;
 }
 
 .timeel {
@@ -130,7 +131,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .countup {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: .75em;
+  margin-top: .75em;
 }
 
 .countup span[class*="timeRef"] {
@@ -218,4 +220,22 @@ h1, h2, h3, h4, h5, h6 {
   50% {
     opacity: 0.5;
   }
+}
+
+.dataButton {
+    cursor: pointer;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.section {
+    transition: height 2.5s;
 }

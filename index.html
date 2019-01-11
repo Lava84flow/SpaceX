@@ -50,15 +50,16 @@
                 content Blargh
             </p>
 
-            <div style="width: 100%;">
+            <div class="section" style="width: 100%;">
                 
                 <span><h3>Next Launch - <span id="payloadNext">Blargh</span></h3></span>
                 
-                <p id="nextDetails">
+                <p id="nextDetails" style="width: 80%; margin: auto;">
                     next Blargh 
                 </p>
                 
                 <div class="countdown" id="countdown1">
+                    <span>Time To Launch:</span>
                     <span class="timeel days">00</span>
                     <span class="timeel timeRefDays">days</span>
                     <span class="timeel hours">00</span>
@@ -66,23 +67,56 @@
                     <span class="timeel minutes">00</span>
                     <span class="timeel timeRefMinutes">minutes</span>
                     <span class="timeel seconds">00</span>
-                    <span class="timeel timeRefSeconds">seconds</span>
+                    <span class="timeel timeRefSeconds">seconds</span>                    
                 </div>
                 
+                <hr style="width: 80%;">
                 
+                <div class="noselect" id="nextButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
+                    <span class="dataButton" onClick="showMoreData()">More Stats</span>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <span class="dataButton" onClick="showAllData()">Stats Dump</span>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <span class="dataButton" onClick="hideData()">Hide Stats</span>
+                    
+                </div>
+                
+                <div id="nextSlide">
+                    <div id="dataMoreNext" style="display: none">
+                        
+                        <p>
+                            more Blargh
+                        </p>
+                        
+                    </div>
+                    
+                    <div id="dataDumpNext" style="display: none">
+                        
+                        <p>
+                            dump Blargh
+                        </p>
+                        
+                    </div>
+                    
+                </div>
                 
             </div>
             
                 
 
-            <div style="width: 100%;">
+            <div class="section" style="width: 100%;">
                 <span><h3>Latest Launch  - <span id="payloadLatest">Blargh</span></h3></span>
 
-                <p id="latestDetails">
+                <p id="latestDetails" style="width: 80%; margin: auto;">
                     latest Blargh 
                 </p>
 
                 <div class="countup" id="countup1">
+                    <span>Time From Launch:</span>
                     <span class="timeel days">00</span>
                     <span class="timeel timeRefDays">days</span>
                     <span class="timeel hours">00</span>
@@ -92,6 +126,41 @@
                     <span class="timeel seconds">00</span>
                     <span class="timeel timeRefSeconds">seconds</span>
                 </div>
+                
+                <hr style="width: 80%;">
+                
+                <div class="noselect" id="latestButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
+                    <span class="dataButton" onClick="showMoreData()">More Stats</span>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <span class="dataButton" onClick="showAllData()">Stats Dump</span>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <span class="dataButton" onClick="hideData()">Hide Stats</span>
+                    
+                </div>
+                
+                <div id="latestSlide">
+                    <div id="dataMoreLatest" style="display: none">
+                        
+                        <p>
+                            more Blargh
+                        </p>
+                        
+                    </div>
+                    
+                    <div id="dataDumpLatest" style="display: none">
+                        
+                        <p>
+                            dump Blargh
+                        </p>
+                        
+                    </div>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -118,6 +187,8 @@
         <div class="footer">
             <footer>
                 footer Blargh
+                
+                <span><h6>Times are UTC</h6></span>     
             </footer>
         </div> 
     </div>

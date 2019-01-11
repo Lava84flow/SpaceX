@@ -13,7 +13,8 @@ apiPull("launches/next", parseNext);
 function parseNext(){
     data = JSON.parse(this.response)
     countDownToTime(data.launch_date_utc, 'countdown1');
-    document.getElementById("nextDetails").innerHTML = 'SpaceX will launch a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', lofting the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + 'Blargh';
+    document.getElementById("payloadNext").innerHTML = data.rocket.second_stage.payloads[0].payload_id;
+    document.getElementById("nextDetails").innerHTML = 'SpaceX will launch a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', lofting the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
     
 }
 
@@ -22,8 +23,14 @@ apiPull("launches/latest", parseLatest);
 function parseLatest(){
     data = JSON.parse(this.response)
     countUpFromTime(data.launch_date_utc, 'countup1');
-    
+    document.getElementById('payloadLatest').innerHTML = data.rocket.second_stage.payloads[0].payload_id;
+    document.getElementById('latestDetails').innerHTML = 'SpaceX recentaly launched a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', which lofted the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
+
 }
+
+console.log(JSON.stringify(x, (key, value) => {
+  if (value !== null) return value
+}))
 
 /*
  * Basic Count Down to Date and Time
@@ -89,5 +96,7 @@ function countUpFromTime(countFrom, id) {
     clearTimeout(countUpFromTime.interval);
 countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
 }
+
+
 
 /*JSON.stringify(undefined, undefined, 4);*/
