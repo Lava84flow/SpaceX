@@ -12,9 +12,15 @@ apiPull("launches/next", parseNext);
 
 function parseNext(){
     data = JSON.parse(this.response)
+    if  (data.rocket.second_stage.payloads[0].payload_mass_kg == null ) {
+       mass = "0";
+    } 
+    else {
+        mass = data.rocket.second_stage.payloads[0].payload_mass_kg;
+    }
     countDownToTime(data.launch_date_utc, 'countdown1');
     document.getElementById("payloadNext").innerHTML = data.rocket.second_stage.payloads[0].payload_id;
-    document.getElementById("nextDetails").innerHTML = 'SpaceX will launch a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', lofting the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
+    document.getElementById("nextDetails").innerHTML = 'SpaceX will launch a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', lofting the ' + mass + ' kg ' + data.rocket.second_stage.payloads[0].payload_type + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
     
 }
 
