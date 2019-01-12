@@ -28,15 +28,19 @@ apiPull("launches/latest", parseLatest);
 
 function parseLatest(){
     data = JSON.parse(this.response)
+    if  (data.rocket.second_stage.payloads[0].payload_mass_kg == null ) {
+       mass = "0";
+    } 
+    else {
+        mass = data.rocket.second_stage.payloads[0].payload_mass_kg;
+    }
     countUpFromTime(data.launch_date_utc, 'countup1');
     document.getElementById('payloadLatest').innerHTML = data.rocket.second_stage.payloads[0].payload_id;
-    document.getElementById('latestDetails').innerHTML = 'SpaceX recentaly launched a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', which lofted the ' + data.rocket.second_stage.payloads[0].payload_mass_kg + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
+    document.getElementById('latestDetails').innerHTML = 'SpaceX recentaly launched a ' + data.rocket.rocket_name + ' from ' + data.launch_site.site_name_long + ', which lofted the ' + mass + ' kg ' + data.rocket.second_stage.payloads[0].payload_type.toLowerCase() + ' '  + data.rocket.second_stage.payloads[0].payload_id + ' into a ' + data.rocket.second_stage.payloads[0].orbit + ' trajectory.';
 
 }
 
-console.log(JSON.stringify(x, (key, value) => {
-  if (value !== null) return value
-}))
+
 
 /*
  * Basic Count Down to Date and Time
@@ -101,6 +105,49 @@ function countUpFromTime(countFrom, id) {
 
     clearTimeout(countUpFromTime.interval);
 countUpFromTime.interval = setTimeout(function(){ countUpFromTime(countFrom, id); }, 1000);
+}
+
+console.log(JSON.stringify(x, (key, value) => {
+  if (value !== null) return value
+}));
+
+
+
+function showAllDataNext () {
+    apiPull("launches/next", cleanData);
+    function cleanData() {
+        clean = JSON.parse(this.response, (key, value) => {
+          if (value !== null) return value
+        });
+        
+        /*
+        console.log(JSON.parse(this.response, (key, value) => {
+          if (value !== null) return value
+        }))
+        */
+        pretty = JSON.stringify(clean, null, 2);
+    
+        //console.log(pretty);
+        
+        document.getElementById('dumpOutNext').innerHTML = pretty;
+        
+        document.getElementById("dataDumpNext").style.display = "block";
+        
+        document.getElementById("nextSlide").classList.add("tall");
+        
+        //set the show functions to use arguments later by replacing the 'Next' bits of the ids and the like with variables at some point
+        
+        // double check if data already exist and don't replace it later 
+        
+        
+    }
+    
+    
+    
+}
+
+function hideData(section) {
+    document.getElementById(section).classList.remove("tall");
 }
 
 

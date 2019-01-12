@@ -236,6 +236,19 @@ h1, h2, h3, h4, h5, h6 {
                                   supported by Chrome and Opera */
 }
 
-.section {
-    transition: height 2.5s;
+
+
+.slide {
+    	/* Initially we don't want any height, and we want the contents to be hidden */
+	max-height: 0;
+	overflow: hidden;
+
+	/* Set our transitions up. */
+	-webkit-transition: max-height 2s;
+	-moz-transition: max-height 2s;
+	transition: max-height 2s;
+}
+
+.tall {
+    max-height: 9999px;
 }
