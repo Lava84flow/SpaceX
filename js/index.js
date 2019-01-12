@@ -11,7 +11,7 @@ function test(){
 apiPull("launches/next", parseNext);
 
 function parseNext(){
-    data = JSON.parse(this.response)
+    data = JSON.parse(this.response);
     if  (data.rocket.second_stage.payloads[0].payload_mass_kg == null ) {
        mass = "0";
     } 
@@ -27,7 +27,7 @@ function parseNext(){
 apiPull("launches/latest", parseLatest);
 
 function parseLatest(){
-    data = JSON.parse(this.response)
+    data = JSON.parse(this.response);
     if  (data.rocket.second_stage.payloads[0].payload_mass_kg == null ) {
        mass = "0";
     } 
@@ -111,7 +111,37 @@ console.log(JSON.stringify(x, (key, value) => {
   if (value !== null) return value
 }));
 
+//HALF figued out how to keep api data for fucntions, need to set up a return after all of the parsing and such is done
 
+function showMoreDataNext() {
+    apiPull("launches/next", parseData);
+    function parseData() {
+        data = JSON.parse(this.response);
+        
+        document.getElementById("moreOutNext").innerHTML = 'This is Flight Number ' + data.flight_number + data.rocket.rocket_name;
+        
+        document.getElementById("dataDumpNext").style.display = "none";
+        
+        document.getElementById("dataMoreNext").style.display = "block";
+        
+        document.getElementById("nextSlide").classList.add("tall");
+        
+        //working on more info
+    }
+    
+}
+
+
+function showMoreDataLatest() {
+    apiPull("launches/latest", parseData);
+    function parseData() {
+        data = JSON.parse(this.response);
+        
+        document.getElementById('moreOutLatest').innerHTML = 'Blargh' ;
+    }
+    
+    
+}
 
 function showAllDataNext () {
     apiPull("launches/next", cleanData);
@@ -131,6 +161,8 @@ function showAllDataNext () {
         
         document.getElementById('dumpOutNext').innerHTML = pretty;
         
+        document.getElementById("dataMoreNext").style.display = "none";
+        
         document.getElementById("dataDumpNext").style.display = "block";
         
         document.getElementById("nextSlide").classList.add("tall");
@@ -142,7 +174,36 @@ function showAllDataNext () {
         
     }
     
+}
     
+    function showAllDataLatest () {
+    apiPull("launches/latest", cleanData);
+    function cleanData() {
+        clean = JSON.parse(this.response, (key, value) => {
+          if (value !== null) return value
+        });
+        
+        /*
+        console.log(JSON.parse(this.response, (key, value) => {
+          if (value !== null) return value
+        }))
+        */
+        pretty = JSON.stringify(clean, null, 2);
+    
+        //console.log(pretty);
+        
+        document.getElementById('dumpOutLatest').innerHTML = pretty;
+        
+        document.getElementById("dataMoreLatest").style.display = "block";
+        
+        document.getElementById("latestSlide").classList.add("tall");
+        
+        //set the show functions to use arguments later by replacing the 'Next' bits of the ids and the like with variables at some point
+        
+        // double check if data already exist and don't replace it later 
+        
+        
+    }
     
 }
 

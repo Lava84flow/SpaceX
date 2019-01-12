@@ -73,22 +73,24 @@
                 <hr style="width: 80%;">
                 
                 <div class="noselect" id="nextButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
-                    <span class="dataButton" onClick="showMoreData()">More Stats</span>
+                    <span class="dataButton" onClick="showMoreDataNext()">More Info</span>
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <span class="dataButton" onClick="showAllDataNext()">Stats Dump</span>
+                    <span class="dataButton" onClick="showAllDataNext()">Info Dump</span>
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <span class="dataButton" onClick="hideData('nextSlide')">Hide Stats</span>
+                    <span class="dataButton" onClick="hideData('nextSlide')">Hide Info</span>
                     
                 </div>
                 
                 <div class="slide" id="nextSlide">
                     <div id="dataMoreNext" style="display: none">
                         
-                        <p>
+                        
+                        
+                        <p id="moreOutNext">
                             more Blargh
                         </p>
                         
@@ -134,22 +136,22 @@
                 <hr style="width: 80%;">
                 
                 <div class="noselect" id="latestButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
-                    <span class="dataButton" onClick="showMoreData()">More Stats</span>
+                    <span class="dataButton" onClick="showMoreDataLatest()">More Info</span>
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <span class="dataButton" onClick="showAllDataLatest()">Stats Dump</span>
+                    <span class="dataButton" onClick="showAllDataLatest()">Info Dump</span>
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <span class="dataButton" onClick="hideData('latestSlide')">Hide Stats</span>
+                    <span class="dataButton" onClick="hideData('latestSlide')">Hide Info</span>
                     
                 </div>
                 
                 <div class="slide" id="latestSlide">
                     <div id="dataMoreLatest" style="display: none">
                         
-                        <p>
+                        <p id="moreOutLatest">
                             more Blargh
                         </p>
                         
@@ -157,9 +159,13 @@
                     
                     <div id="dataDumpLatest" style="display: none">
                         
-                        <p>
-                            dump Blargh
-                        </p>
+                        <h4>
+                            Stats are scrubbed of nulls
+                        </h4>
+                        
+                        <pre id="dumpOutLatest">
+                        
+                        </pre>
                         
                     </div>
                     
