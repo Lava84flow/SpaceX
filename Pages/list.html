@@ -36,6 +36,9 @@
                         All Launches
                     </a>
                 </li>
+                <li>
+                <a href="#top">Top</a>
+                </li>
             </ul>
         </div>
 
@@ -60,12 +63,13 @@
                 
             </pre>
             </div>
+            <div id="prize" style="width: 100%; display: none">
             <p>
                 <hr>
             <h2>Well, you finally finished that Crusade...</h2>
                 
             </p>
-            <img style="display: block; margin: auto;" src="../Shared/Images/Crusader-roto.png" alt="Diablo 3 Crusader">
+            <img  style="margin: auto;" src="../Shared/Images/Crusader-roto.png" alt="Diablo 3 Crusader">
         </div>
     
     
@@ -103,6 +107,7 @@
             pretty = JSON.stringify(clean, null, 2);
             // console.log(pretty)
             document.getElementById('listOut').innerHTML = pretty;
+            document.getElementById('prize').style.display = "block";
         }
         
     </script>
