@@ -14,7 +14,8 @@
         <div class="header">
             <header>
                 <h1>SpaceX Stuff</h1>
-                <h2>If they did a thing, it's in here somewhere.</h2>
+                <h2>If they did a thing, it's in here somewhere. *</h2>
+                <span style="font-size: .4em;"><h6>* I mean it this time</h6></span>
             </header>
         </div>
 
@@ -46,10 +47,28 @@
         </script>
         
         <div class="content">
-            <p>
+            <!--<p>
                 content Blargh
+            </p>-->
+            <h1>All Launches</h1>
+            <h2>
+                Start scrolling Punk, you are going to be here a good while.
+            </h2>
+            <hr>
+            <div id="listSlide">
+            <pre id="listOut">
+                
+            </pre>
+            </div>
+            <p>
+                <hr>
+            <h2>Well, you finally finished that Crusade...</h2>
+                
             </p>
+            <img style="display: block; margin: auto;" src="../Shared/Images/Crusader-roto.png" alt="Diablo 3 Crusader">
         </div>
+    
+    
         
         <!--<div id="scroll test">
             <h3>On Scroll Sticky Header</h3>
@@ -66,13 +85,26 @@
         </div>-->
         
         <div class="footer">
-            <footer>
-                footer Blargh
+            <hr>
+            <footer style="display: inline">
+                <!--footer Blargh-->            
+                <span style="text-align: right">Lava84flow | 2019</span>
+                
             </footer>
         </div> 
     </div>
     
     <script type="text/javascript" src="../Shared/shared.js"></script>
-    
+    <script>
+        
+        apiPull("launches", parseList);
+        function parseList() {
+            clean = JSON.parse(this.response)
+            pretty = JSON.stringify(clean, null, 2);
+            // console.log(pretty)
+            document.getElementById('listOut').innerHTML = pretty;
+        }
+        
+    </script>
 </body>
 </html>

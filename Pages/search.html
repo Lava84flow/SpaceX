@@ -46,10 +46,40 @@
         </script>
 
         <div class="content">
-            <p>
+            <!--<p>
                 content Blargh
-            </p>
+            </p>-->
+            <h1>
+                Search
+            </h1>
+            <h2 style='text-align: center;' id="instruction"></h2>
+            
+            <div style="text-align: center;"><input type="text" id="searchID"><button type="button" onclick="doSearch()">Submit</button></div>
+            <br>
+            <hr>
+            <br>
+            <div class="slide" id="searchSlide" >
+            <pre id="searchOut" style=" width: 80%;">
+            
+            </pre>
+            </div>
         </div>
+        
+        <script>
+
+            function doSearch() {
+                var x = parseInt(document.getElementById("searchID").value) ;
+                apiPullID("launches", parseSearch, x);
+                function parseSearch() {
+                    clean = JSON.parse(this.response)
+                    pretty = JSON.stringify(clean, null, 2);
+                    // console.log(pretty)
+                    document.getElementById('searchOut').innerHTML = pretty;
+                    
+                    document.getElementById("searchSlide").classList.add("tall");
+                }
+            }
+        </script>
         
         <!--<div id="scroll test">
             <h3>On Scroll Sticky Header</h3>
@@ -66,13 +96,25 @@
         </div>-->
         
         <div class="footer">
-            <footer>
-                footer Blargh
+            <footer style="display: inline">
+                <!--footer Blargh-->            
+                <span style="text-align: right">Lava84flow | 2019</span>
+                
             </footer>
         </div>
     </div>
     
     <script type="text/javascript" src="../Shared/shared.js"></script>
+    
+    <script>
+        apiPull("launches", validRange);
+             function validRange () {
+                 valid = JSON.parse(this.response).length ;
+                 //console.log(valid);
+             document.getElementById("instruction").innerHTML = 'Enter a number between 1 and ' + valid;
+             
+             } 
+    </script>
     
 </body>
 </html>

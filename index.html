@@ -46,9 +46,15 @@
         </script>
 
         <div class="content">
-            <p>
+            
+            
+            <!--<p>
                 content Blargh
-            </p>
+            </p>-->
+            
+            <h2> Upcoming and Recent Launches</h2>
+            
+            <hr>
 
             <div class="section" style="width: 100%;">
                 
@@ -67,21 +73,26 @@
                     <span class="timeel minutes">00</span>
                     <span class="timeel timeRefMinutes">minutes</span>
                     <span class="timeel seconds">00</span>
-                    <span class="timeel timeRefSeconds">seconds</span>                    
+                    <span class="timeel timeRefSeconds">seconds</span>   
+                    <span style="text-align: center"><h5>Times are in UTC</h5></span>
                 </div>
                 
                 <hr style="width: 80%;">
                 
-                <div class="noselect" id="nextButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
-                    <span class="dataButton" onClick="showMoreDataNext()">More Info</span>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <span class="dataButton" onClick="showAllDataNext()">Info Dump</span>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <span class="dataButton" onClick="hideData('nextSlide')">Hide Info</span>
+                <div class="noselect button-bar" id="nextButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
+                    
+                    <ul>
+                        <li>
+                            <span class="dataButton" onClick="showMoreDataNext()">More Info</span>
+                        </li>
+                    
+                        <li>
+                            <span class="dataButton" onClick="showAllDataNext()">Info Dump</span>
+                        </li>
+                        <li>
+                            <span class="dataButton" onClick="hideData('nextSlide')">Hide Info</span>
+                        </li>
+                    </ul>
                     
                 </div>
                 
@@ -112,7 +123,9 @@
                 
             </div>
             
-                
+            <br>
+            <hr>
+            
 
             <div class="section" style="width: 100%;">
                 <span><h3>Latest Launch  - <span id="payloadLatest">Blargh</span></h3></span>
@@ -131,20 +144,24 @@
                     <span class="timeel timeRefMinutes">minutes</span>
                     <span class="timeel seconds">00</span>
                     <span class="timeel timeRefSeconds">seconds</span>
+                    <span style="text-align: Center"><h5>Times are in UTC</h5></span>
                 </div>
                 
                 <hr style="width: 80%;">
                 
-                <div class="noselect" id="latestButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
-                    <span class="dataButton" onClick="showMoreDataLatest()">More Info</span>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <span class="dataButton" onClick="showAllDataLatest()">Info Dump</span>
-                    &nbsp;
-                    &nbsp;
-                    &nbsp;
-                    <span class="dataButton" onClick="hideData('latestSlide')">Hide Info</span>
+                <div class="noselect button-bar" id="latestButtons" style="width: 40%; min-width: 200px; text-align: center; cursor: default;">
+                    
+                    <ul>
+                        <li>
+                            <span class="dataButton" onClick="showMoreDataLatest()">More Info</span>
+                        </li>
+                        <li>
+                            <span class="dataButton" onClick="showAllDataLatest()">Info Dump</span>
+                        </li>
+                        <li>
+                            <span class="dataButton" onClick="hideData('latestSlide')">Hide Info</span>
+                        </li>
+                    </ul>
                     
                 </div>
                 
@@ -194,11 +211,11 @@
         
         <!--<iframe src="https://norvig.com/big.txt" width="80%" style="margin:auto;"></iframe>--> 
 
-        <div class="footer">
-            <footer>
-                footer Blargh
+        <div class="footer"><hr>
+            <footer style="display: inline">
+                <!--footer Blargh-->            
+                <span style="text-align: right">Lava84flow | 2019</span>
                 
-                <span><h6>Times are UTC</h6></span>     
             </footer>
         </div> 
     </div>

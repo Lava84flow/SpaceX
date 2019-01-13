@@ -53,24 +53,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-bar { 
+    width: 50%;
     padding-right: 16px;
     padding-left: 16px;
     margin: auto;
-}
-
-.nav-bar ul {
-    width: 60%;
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
+    /*! padding: 0; */
     overflow: hidden;
     background-color: #622488;
     border-radius: 0.75em;
     transition: border-radius 1s;
 }
 
-.sticky ul {
-    border-radius: 0 0 0.75em 0.75em;
+.nav-bar ul {
+
+    margin: auto;
+    list-style-type: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.sticky div {
+    border-radius: 0  0.75em 0.75em 0;
 
     
 }
@@ -96,12 +104,13 @@ h1, h2, h3, h4, h5, h6 {
 .sticky {
     position: sticky;
     top: 0;
-    border-radius: 0 0.75em 0.75em 0;
+    border-radius: 0 0 .75em .75em;
 }
 
 
 .footer {
     padding: 16px;
+    text-align: right;
 }
 
 .countdown {
@@ -255,4 +264,40 @@ h1, h2, h3, h4, h5, h6 {
 
 pre {
     font-family: Arial, Helvetica, sans-serif;
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+}
+
+.button-bar {
+    /*! width: 80%; */
+    margin: auto;
+    margin-top: 1.25em;
+    overflow: hidden;
+    background-color: #622488;
+    border-radius: 0.75em;
+    margin-bottom: .25em;
+}
+.button-bar ul {
+    margin: auto;
+    list-style-type: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.button-bar ul li {
+    float: left;
+}
+.button-bar span {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.button-bar span:hover {
+	background-color: #111;
 }

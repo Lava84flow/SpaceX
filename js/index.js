@@ -117,8 +117,13 @@ function showMoreDataNext() {
     apiPull("launches/next", parseData);
     function parseData() {
         data = JSON.parse(this.response);
+        if (data.rocket.first_stage.cores[0].landing_intent == true ) {
+            landing = 'intended'
+        } else {
+            landing = 'not intended'
+        }
         
-        document.getElementById("moreOutNext").innerHTML = 'This is Flight Number ' + data.flight_number + data.rocket.rocket_name;
+        document.getElementById("moreOutNext").innerHTML = 'This is Flight Number ' + data.flight_number + '. A ' + data.rocket.rocket_name + ' rocket will be used. The first stage engine core is ' + data.rocket.first_stage.cores[0].core_serial + '. It is ' + landing + ' to be landed and recovered. The payload customer is ' + data.rocket.second_stage.payloads[0].customers[0] + '. It was made by ' + data.rocket.second_stage.payloads[0].manufacturer + '. <br>  <span><h4>Flight Details</h4></span>' + data.details;
         
         document.getElementById("dataDumpNext").style.display = "none";
         
@@ -137,7 +142,25 @@ function showMoreDataLatest() {
     function parseData() {
         data = JSON.parse(this.response);
         
-        document.getElementById('moreOutLatest').innerHTML = 'Blargh' ;
+        if (data.rocket.first_stage.cores[0].landing_intent == true ) {
+            landing = 'intended'
+        } else {
+            landing = 'not intended'
+        }
+        
+        if (data.rocket.first_stage.cores[0].land_success == true ) {
+            landed = 'was'
+        } else {
+            landed = 'was not'
+        }
+        
+        document.getElementById('moreOutLatest').innerHTML = 'This is Flight Number ' + data.flight_number + '. A ' + data.rocket.rocket_name + ' rocket was used. The first stage engine core was ' + data.rocket.first_stage.cores[0].core_serial + '. It was ' + landing + ' to be landed and recovered. It ' + landed + ' successfully recovered. The payload customer was ' + data.rocket.second_stage.payloads[0].customers[0] + '. It was made by ' + data.rocket.second_stage.payloads[0].manufacturer + '. <br>  <span><h4>Flight Details</h4></span>' + data.details ;
+        
+        document.getElementById("dataDumpLatest").style.display = "none";
+        
+        document.getElementById("dataMoreLatest").style.display = "block";
+        
+        document.getElementById("latestSlide").classList.add("tall");   
     }
     
     
@@ -194,11 +217,13 @@ function showAllDataNext () {
         
         document.getElementById('dumpOutLatest').innerHTML = pretty;
         
-        document.getElementById("dataMoreLatest").style.display = "block";
+        document.getElementById("dataMoreLatest").style.display = "none";
+        
+        document.getElementById("dataDumpLatest").style.display = "block";
         
         document.getElementById("latestSlide").classList.add("tall");
         
-        //set the show functions to use arguments later by replacing the 'Next' bits of the ids and the like with variables at some point
+        //set the show functions to use arguments later by replacing the 'Next' bits of the ids and the like with  variables at some point
         
         // double check if data already exist and don't replace it later 
         
